@@ -29,11 +29,6 @@ module.exports.init = (io, names, actionHistory, messageHistory, colors) => {
     ]
 
     io.on("connection", socket => {
-        socket.emit("start-up", {
-            map: fakeMap, 
-            history: fakeHistory,
-        });
-
         socket.on("disconnect", data => {
             message = `${names[socket.id]} has disconnected`
             socket.broadcast.emit("broadcast-message", message);
@@ -68,8 +63,8 @@ module.exports.init = (io, names, actionHistory, messageHistory, colors) => {
         });
 
         socket.on("send-name", name => {
-            names[socket.id] = name;
-            colors[socket.id] = utils.chooseRandomColor();
+            //names[socket.id] = name;
+            //colors[socket.id] = utils.chooseRandomColor();
 
             message = `${names[socket.id]} ${utils.joinMessage()}`;
             socket.broadcast.emit("broadcast-message", message);

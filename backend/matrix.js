@@ -47,7 +47,7 @@ const idConv = {
 
 var boxSize = 3;
 var gridSize = ( 3 + ( 2*(boxSize - 1) ) );
-var direction = "east"; //N E W S; defaults to East;
+var direction = "east"; //N E W S; defaults to East
 const directionPriority = ["north", "east", "south", "west"];
 const directionReverse = {"north": "south", "east": "west", "south": "north", "west": "east"};
 const locationDelta = {"north": {"row": -1, "column": 0}, "east": {"row": 0, "column": 1}, "south": {"row": 1, "column": 0}, "west": {"row": 0, "column": -1}};
@@ -87,10 +87,6 @@ function getMap(){
     }
 
     return modifiedRails;
-}
-
-function clickRail(data){
-    
 }
 
 function updateRails(coordinatePair, socketid){
@@ -174,5 +170,3 @@ function pathfind(){
 
     return route;
 }
-
-export {}
